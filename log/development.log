@@ -1,0 +1,362 @@
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-29 10:47:40 +0800
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.1.8) lib/active_record/migration.rb:389:in `check_pending!'
+  activerecord (4.1.8) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.6ms)
+  [1m[36m (9.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateIdeas (20141129024549)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "ideas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "picture" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141129024549"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-29 10:47:53 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Library/Ruby/Gems/2.0.0/gems/railties-4.1.8/lib/rails/templates/rails/welcome/index.html.erb (0.6ms)
+Completed 200 OK in 21ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-29 10:47:54 +0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Library/Ruby/Gems/2.0.0/gems/railties-4.1.8/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2014-11-29 10:47:57 +0800
+Processing by IdeasController#index as HTML
+  [1m[35mIdea Load (0.1ms)[0m  SELECT "ideas".* FROM "ideas"
+  Rendered ideas/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 1001ms (Views: 998.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/ideas.css?body=1" for 127.0.0.1 at 2014-11-29 10:47:58 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-29 10:47:58 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-29 10:47:58 +0800
+
+
+Started GET "/assets/ideas.js?body=1" for 127.0.0.1 at 2014-11-29 10:47:58 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-29 10:47:58 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-29 10:47:58 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-29 10:47:58 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-29 10:47:58 +0800
+
+
+Started GET "/ideas" for 127.0.0.1 at 2014-11-29 10:48:37 +0800
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.2ms)[0m  [1mSELECT "ideas".* FROM "ideas"[0m
+  Rendered ideas/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/ideas.css?body=1" for 127.0.0.1 at 2014-11-29 10:48:37 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-29 10:48:37 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-29 10:48:37 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-29 10:48:37 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-29 10:48:37 +0800
+
+
+Started GET "/assets/ideas.js?body=1" for 127.0.0.1 at 2014-11-29 10:48:37 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-29 10:48:37 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-29 10:48:38 +0800
+
+
+Started GET "/ideas" for 127.0.0.1 at 2014-11-29 10:48:54 +0800
+Processing by IdeasController#index as HTML
+  [1m[35mIdea Load (0.2ms)[0m  SELECT "ideas".* FROM "ideas"
+  Rendered ideas/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 33ms (Views: 32.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2014-11-29 10:49:20 +0800
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.1ms)[0m  [1mSELECT "ideas".* FROM "ideas"[0m
+  Rendered ideas/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 110ms (Views: 108.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/ideas.css?body=1" for 127.0.0.1 at 2014-11-29 10:49:20 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-29 10:49:20 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-29 10:49:20 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-29 10:49:20 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-29 10:49:20 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-29 10:49:20 +0800
+
+
+Started GET "/assets/ideas.js?body=1" for 127.0.0.1 at 2014-11-29 10:49:20 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-29 10:49:20 +0800
+
+
+Started GET "/ideas/new" for 127.0.0.1 at 2014-11-29 10:49:23 +0800
+Processing by IdeasController#new as HTML
+  Rendered ideas/_form.html.erb (16.4ms)
+  Rendered ideas/new.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2014-11-29 10:49:25 +0800
+Processing by IdeasController#index as HTML
+  [1m[35mIdea Load (0.1ms)[0m  SELECT "ideas".* FROM "ideas"
+  Rendered ideas/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 94ms (Views: 93.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2014-11-29 10:55:51 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by IdeasController#index as HTML
+Completed 500 Internal Server Error in 10ms
+
+NameError (uninitialized constant Idea::PictureUploader):
+  app/models/idea.rb:2:in `<class:Idea>'
+  app/models/idea.rb:1:in `<top (required)>'
+  app/controllers/ideas_controller.rb:7:in `index'
+
+
+  Rendered /Users/tedylim/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/tedylim/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/tedylim/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/tedylim/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.6ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2014-11-29 10:56:13 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by IdeasController#index as HTML
+  [1m[35mIdea Load (0.2ms)[0m  SELECT "ideas".* FROM "ideas"
+  Rendered ideas/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 1000ms (Views: 986.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/ideas.css?body=1" for 127.0.0.1 at 2014-11-29 10:56:14 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-29 10:56:14 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-29 10:56:14 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-29 10:56:14 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-29 10:56:14 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-29 10:56:14 +0800
+
+
+Started GET "/assets/ideas.js?body=1" for 127.0.0.1 at 2014-11-29 10:56:14 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-29 10:56:14 +0800
+
+
+Started GET "/ideas/new" for 127.0.0.1 at 2014-11-29 10:56:17 +0800
+Processing by IdeasController#new as HTML
+  Rendered ideas/_form.html.erb (57.5ms)
+  Rendered ideas/new.html.erb within layouts/application (60.6ms)
+Completed 200 OK in 95ms (Views: 91.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-29 10:58:57 +0800
+
+ArgumentError (controller name should not start with a slash):
+  config/routes.rb:3:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/tedylim/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/tedylim/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/tedylim/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/tedylim/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-29 10:59:05 +0800
+
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  config/routes.rb:3:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/tedylim/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/tedylim/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/tedylim/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/tedylim/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-29 10:59:11 +0800
+
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  config/routes.rb:3:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/tedylim/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/tedylim/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/tedylim/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/tedylim/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-29 10:59:22 +0800
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.4ms)[0m  [1mSELECT "ideas".* FROM "ideas"[0m
+  Rendered ideas/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 75ms (Views: 70.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-29 10:59:22 +0800
+
+
+Started GET "/assets/ideas.css?body=1" for 127.0.0.1 at 2014-11-29 10:59:22 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-29 10:59:22 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-29 10:59:22 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-29 10:59:22 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-29 10:59:22 +0800
+
+
+Started GET "/assets/ideas.js?body=1" for 127.0.0.1 at 2014-11-29 10:59:22 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-29 10:59:22 +0800
+
+
+Started GET "/ideas/new" for 127.0.0.1 at 2014-11-29 10:59:25 +0800
+Processing by IdeasController#new as HTML
+  Rendered ideas/_form.html.erb (5.4ms)
+  Rendered ideas/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 41ms (Views: 38.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/ideas" for 127.0.0.1 at 2014-11-29 10:59:36 +0800
+Processing by IdeasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WA00wxqPffpW7/+JVeO+0N3C5fuzYkP4kkfNStb+NP4=", "idea"=>{"name"=>"Pegmen", "description"=>":DDDDD", "picture"=>#<ActionDispatch::Http::UploadedFile:0x007fdd5ce430b8 @tempfile=#<Tempfile:/var/folders/b3/_br2_ggs1x306x9ydg8xcyyc0000gn/T/RackMultipart20141129-47267-1ri4m44>, @original_filename="0b670dfd6b5149d392d83e1a912ae69b (1).png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"idea[picture]\"; filename=\"0b670dfd6b5149d392d83e1a912ae69b (1).png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Idea"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ideas" ("created_at", "description", "name", "picture", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-11-29 02:59:36.498310"], ["description", ":DDDDD"], ["name", "Pegmen"], ["picture", "0b670dfd6b5149d392d83e1a912ae69b__1_.png"], ["updated_at", "2014-11-29 02:59:36.498310"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/ideas/1
+Completed 302 Found in 16ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/ideas/1" for 127.0.0.1 at 2014-11-29 10:59:36 +0800
+Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIdea Load (0.2ms)[0m  [1mSELECT  "ideas".* FROM "ideas"  WHERE "ideas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered ideas/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 85ms (Views: 80.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/ideas/1/edit" for 127.0.0.1 at 2014-11-29 10:59:44 +0800
+Processing by IdeasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mIdea Load (0.1ms)[0m  SELECT  "ideas".* FROM "ideas"  WHERE "ideas"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered ideas/_form.html.erb (2.3ms)
+  Rendered ideas/edit.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/ideas/1" for 127.0.0.1 at 2014-11-29 10:59:45 +0800
+Processing by IdeasController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WA00wxqPffpW7/+JVeO+0N3C5fuzYkP4kkfNStb+NP4=", "idea"=>{"name"=>"Pegmen", "description"=>":DDDDD"}, "commit"=>"Update Idea", "id"=>"1"}
+  [1m[36mIdea Load (0.1ms)[0m  [1mSELECT  "ideas".* FROM "ideas"  WHERE "ideas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/ideas/1
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/ideas/1" for 127.0.0.1 at 2014-11-29 10:59:45 +0800
+Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mIdea Load (0.2ms)[0m  SELECT  "ideas".* FROM "ideas"  WHERE "ideas"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered ideas/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 71ms (Views: 67.8ms | ActiveRecord: 0.2ms)
